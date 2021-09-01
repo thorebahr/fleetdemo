@@ -1,0 +1,29 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubeinvaders
+  labels:
+    app.kubernetes.io/name: kubeinvaders
+    helm.sh/chart: {{ include "kubeinvaders.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  tls:
+    - hosts:
+      - {{ .Values.ingress.hostName | quote }}
+      secretName: {{ .Values.ingress.secretName }}
+  rules:
+  - host: {{ .Values.ingress.hostName }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubeinvaders
+          servicePort: 8080
+{{- end }}
+
