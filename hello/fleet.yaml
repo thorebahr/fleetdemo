@@ -5,4 +5,4 @@ targetCustomizations:
         - green-color
     clusterSelector:
       matchLabels:
-     
+        sat-version: 2
