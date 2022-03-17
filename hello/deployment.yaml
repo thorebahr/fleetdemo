@@ -23,9 +23,8 @@ spec:
             protocol: TCP
           env:
             - name: COW_COLOR
-              value: green
-            - name: TITLE
-              value: Satelitte Managment System Deluxe
+              value: red
+
           readinessProbe:
             httpGet:
               port: web
