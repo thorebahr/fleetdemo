@@ -22,10 +22,10 @@ spec:
             name: web
             protocol: TCP
           env:
-            - name: CONTAINER_COLOR
+            - name: COW_COLOR
               value: green
-            - name: PETS
-              value: chameleons
+            - name: TITLE
+              value: Satelitte Managment System Deluxe
           readinessProbe:
             httpGet:
               port: web
