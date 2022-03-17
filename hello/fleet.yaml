@@ -1,0 +1,8 @@
+targetCustomizations:
+  - name: version 
+    yaml:
+      overlays:
+        - green-color
+    clusterSelector:
+      matchLabels:
+        sat-version: 2
