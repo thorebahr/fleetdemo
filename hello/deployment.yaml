@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: bashofmann/rancher-demo:1.1.0
+          image: bashofmann/rancher-demo:1.0.0
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
@@ -23,9 +23,7 @@ spec:
             protocol: TCP
           env:
             - name: COW_COLOR
-              value: green
-            - name: TITLE
-              value: Satelitte Managment System Deluxe
+              value: red
           readinessProbe:
             httpGet:
               port: web
