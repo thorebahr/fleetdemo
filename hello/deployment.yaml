@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: satellite-app
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world
+      app: satellite-app
   template:
     metadata:
       labels:
-        app: hello-world
+        app: satellite-app
     spec:
       containers:
-        - name: hello-world
+        - name: satellite-app
           image: bashofmann/rancher-demo:1.0.0
           imagePullPolicy: Always
           ports:
