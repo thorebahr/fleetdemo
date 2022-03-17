@@ -15,15 +15,17 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: bashofmann/rancher-demo:1.0.0
+          image: janeczku/rancher-demo:0.1.0
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
             name: web
             protocol: TCP
           env:
-            - name: COW_COLOR
+            - name: CONTAINER_COLOR
               value: green
+            - name: PETS
+              value: chameleons
           readinessProbe:
             httpGet:
               port: web
